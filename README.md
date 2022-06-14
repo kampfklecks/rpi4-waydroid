@@ -48,4 +48,11 @@ cat /proc/pressure/cpu should output something like: <br>
 some avg10=11.55 avg60=6.28 avg300=1.59 total=5111274 <br>
 full avg10=0.00 avg60=0.00 avg300=0.00 total=116161 <p>
   
-waydroid session start
+sudo nano /var/lib/waydroid/waydroid_base.prop <p>
+
+ro.hardware.gralloc=default <br>
+ro.hardware.egl=mesa <p>
+  
+sudo systemctl restart waydroid-container <p>
+  
+waydroid session start <p>
