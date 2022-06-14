@@ -17,6 +17,10 @@ sudo apt update <p>
 
 pip install pyclip <p>
   
+sudo apt install waydroid <p>
+  
+sudo waydroid init <p>
+  
 sudo nano /etc/gbinder.d/waydroid.conf <p>
   
 [Protocol] <br>
@@ -28,9 +32,5 @@ sudo nano /etc/gbinder.d/waydroid.conf <p>
 /dev/binder = aidl2 <br>
 /dev/vndbinder = aidl2 <br>
 /dev/hwbinder = hidl <p>
-  
-sudo apt install waydroid <p>
-  
-sudo waydroid init <p>
   
 sudo systemctl start waydroid-container <p>
