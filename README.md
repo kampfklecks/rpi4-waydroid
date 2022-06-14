@@ -34,3 +34,18 @@ sudo nano /etc/gbinder.d/waydroid.conf <p>
 /dev/hwbinder = hidl <p>
   
 sudo systemctl start waydroid-container <p>
+  
+Compile Raspberry Pi Kernel with PSI support <br>
+Look at https://www.raspberrypi.com/documentation/computers/linux_kernel.html <p>
+
+Edit menuconfig and add <br>
+CONFIG_PSI=y <br>
+CONFIG_PSI_DEFAULT_DISABLED=y <p>
+  
+sudo nano /boot/cmdline.txt -> add psi=1 <p>
+  
+cat /proc/pressure/cpu should output something like: <br>
+some avg10=11.55 avg60=6.28 avg300=1.59 total=5111274 <br>
+full avg10=0.00 avg60=0.00 avg300=0.00 total=116161 <p>
+  
+waydroid session start
